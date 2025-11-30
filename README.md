@@ -24,15 +24,16 @@ This project demonstrates basic file encryption and decryption using the **Ferne
 ---
 
 ## 📁 Repository Structure
-```
+
 Ransomware/
 │
-├── ransomware.py      # Encrypts files → filename.ext.enc
-├── decrypt.py      # Decrypts files → restores original name
-├── secret.key      # Encryption key (generated once)
-├── README.md       # Documentation
-└── (your files...) # Files that will be encrypted/decrypted
-````
+├── ransomware.py    # Encrypts files → filename.ext.enc
+├── decrypt.py       # Decrypts files → restores original name
+├── secret.key       # Encryption key (generated once)
+├── README.md        # Documentation
+│
+└── (your files...)  # Files that will be encrypted/decrypted
+
 
 ---
 
