@@ -1,53 +1,55 @@
+**Readme**
+---
 
-# 📄 **README.md — Ransomware**
+# 🔐 **Ransomware Simulation (Educational)**
 
-```md
-# Ransomware  
-A simple educational ransomware simulation written in Python.  
-This project demonstrates basic file encryption and decryption using the **Fernet** module from the `cryptography` library.
+A lightweight, fully offline **Python-based ransomware simulation** designed for learning file encryption, decryption, key management, and basic ransomware behavior using **Fernet** from the `cryptography` library.
 
-> ⚠️ **Educational Use Only**  
-> This repository is intended strictly for learning purposes.  
-> Do not deploy this code on systems you do not own or have explicit permission to test.  
-> Misuse can lead to legal consequences.
+> ⚠️ **For Educational & Research Use Only**
+> This project must *only* be used in controlled environments on systems you own or have explicit permission to test.
+> Unauthorized use is illegal and unethical.
 
 ---
 
-## 🚀 Features
-- File encryption using **Fernet (AES-128-CBC + HMAC)**  
-- Appends `.enc` extension to encrypted files  
-- Restores original filenames on decryption  
-- Prevents key overwriting  
-- Avoids double encryption  
-- Works entirely offline  
+## ✨ **Key Capabilities**
+
+* 🔒 **Strong encryption** using Fernet (AES-128-CBC + HMAC)
+* 📁 **Automatic file discovery**
+* 🧩 **Prevents double-encryption**
+* 🗝️ **Safe key handling** (no overwriting)
+* 🔄 **Full decryption support**
+* 📎 **Restores original filenames**
+* 🏃 Works completely **offline**
+* 🧼 Clean structure and beginner-friendly code
 
 ---
 
-## 📁 Repository Structure
+## 📂 **Project Structure**
 
+```
 Ransomware/
 │
-├── ransomware.py    # Encrypts files → filename.ext.enc
-├── decrypt.py       # Decrypts files → restores original name
-├── secret.key       # Encryption key (generated once)
-├── README.md        # Documentation
+├── ransomware.py     # Encrypts: filename.ext → filename.ext.enc
+├── decrypt.py        # Decrypts: filename.ext.enc → filename.ext
+├── secret.key        # Generated once (stores the Fernet key)
+├── README.md         # Documentation
 │
-└── (your files...)  # Files that will be encrypted/decrypted
-
+└── (your files...)   # Any files you place here will be encrypted/decrypted
+```
 
 ---
 
-## 🔑 Requirements
+## 🛠️ **Installation**
 
 Install dependencies:
 
 ```bash
 pip install cryptography
-````
+```
 
 ---
 
-## 🔒 How Encryption Works
+## 🔒 **Encryption Process**
 
 Run:
 
@@ -55,22 +57,23 @@ Run:
 python3 ransomware.py
 ```
 
-Behavior:
+The script will:
 
-* Generates `secret.key` (if not present)
-* Encrypts all files in the directory, except excluded ones
-* Writes output as `filename.ext.enc`
-* Deletes the original unencrypted file
+* Generate `secret.key` if missing
+* Load the Fernet key
+* Scan the directory for encryptable files
+* Encrypt them and append `.enc`
+* Delete unencrypted originals
 
-Example:
+**Example:**
 
 ```
-notes.txt → notes.txt.enc
+report.pdf → report.pdf.enc
 ```
 
 ---
 
-## 🔓 How Decryption Works
+## 🔓 **Decryption Process**
 
 Run:
 
@@ -78,24 +81,25 @@ Run:
 python3 decrypt.py
 ```
 
-Behavior:
+The script will:
 
-* Loads `secret.key`
-* Decrypts every `.enc` file in the directory
-* Restores original filename by removing `.enc`
-* Deletes the encrypted file
+* Load `secret.key`
+* Find all `.enc` files
+* Decrypt them
+* Restore original names
+* Remove encrypted versions
 
-Example:
+**Example:**
 
 ```
-notes.txt.enc → notes.txt
+report.pdf.enc → report.pdf
 ```
 
 ---
 
-## 📌 Excluded Files
+## 🚫 **Files Automatically Excluded**
 
-The following files are automatically ignored during encryption/decryption:
+To avoid self-destruction and key loss:
 
 ```
 README.md
@@ -106,32 +110,37 @@ secret.key
 
 ---
 
-## ⚠️ Legal Disclaimer
+## ⚠️ **Legal Notice**
 
-This project is intended **only for cybersecurity education and research**.
-Running this code on devices without permission is illegal.
+This repository exists **solely** for:
 
-You are solely responsible for how you use this tool.
+* Cybersecurity training
+* Malware behavior analysis
+* Classroom simulations
+* Research & defensive development
 
----
-
-## 🤝 Contributing
-
-Contributions and improvements are welcome.
-Feel free to fork the repo and submit a pull request.
+Using this code on unauthorized systems is **a criminal offense**.
+Responsibility lies entirely with the user.
 
 ---
 
-## 📬 Contact
+## 🤝 **Contributing**
+
+Got ideas or improvements?
+Open an issue or submit a pull request — contributions are welcome.
+
+---
+
+## 📬 **Contact**
 
 **GitHub:** [notfawadmir](https://github.com/notfawadmir)
 **Email:** [fawadmeer000@gmail.com](mailto:fawadmeer000@gmail.com)
 
 ---
 
-## ⭐ Support
+## ⭐ **Support the Project**
 
-If you found this useful, please ⭐ star the repository!
+If this project helped you learn something new, consider giving it a **⭐ star**!
 
-```
+---
 
